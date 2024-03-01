@@ -1,19 +1,11 @@
-import java.util.HashMap;
-import java.util.Map;
-
 class Solution {
-    public int firstUniqChar(String s) {
-        Map<Character, Integer> frequencyMap = new HashMap<>();
-
-        for (char c : s.toCharArray()) {
-            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
-        }
-
-        for (int i = 0; i < s.length(); i++) {
-            if (frequencyMap.get(s.charAt(i)) == 1) {
+       public int firstUniqChar(String s) {
+        
+        for(int i =0;i<s.length();i++){    if(s.indexOf(s.charAt(i))==s.lastIndexOf(s.charAt(i))&&s.indexOf(s.charAt(i)) != -1){
                 return i;
             }
         }
-        return -1; 
+        return -1;
+
     }
 }
