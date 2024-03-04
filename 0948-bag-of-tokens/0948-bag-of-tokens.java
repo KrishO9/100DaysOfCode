@@ -1,3 +1,4 @@
+import java.util.Arrays;
 class Solution {
      public int bagOfTokensScore(int[] tokens, int power) {
         Arrays.sort(tokens);
@@ -12,12 +13,10 @@ class Solution {
             power = power-tokens[i++];
             score++;
             max = Math.max(score, max);
-            System.out.println(max);
         }
         else if(score>=1){
             power = power+tokens[j--];
             score--;
-            System.out.println(score);
         }
         else{
             break;
